@@ -9,7 +9,15 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title> IEEE </title>
+	<title> IEEE </title>
+	
+	<!--Importando owl Caroucel-->
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <!-- javascript -->
+    <script src="vendors/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.js"></script>
     
     <!--Importando Bootstrap CSS-->
 	<link rel="stylesheet" type="text/css" href="CSS/bootstrap-reboot.css">
@@ -19,8 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/style_2.css">
 
 	<!--Importando JS Bootstrap-->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
 	crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
@@ -123,7 +130,7 @@
 				
 		</Section>
 
-		<section class="page-section" id="Objetivos">
+		<section class="page-section" id="Objetivos" step="2">
 
 			
 
@@ -240,8 +247,34 @@
 		</div>
 	</section>
 
-	<!-- experience  -->
-	<div class="section" id="experience">
+
+		<!--Capitulos em owl-carousel-->	
+<section class="page-section" id="Capitulos" step="3">
+	<div class="owl-carousel owl-theme">
+		<div class="item">
+			<img class="" src="img/logo_ramo_azul_branco.png" >
+		</div>
+		<div class="item">
+		  <h4>2</h4>
+		</div>
+		<div class="item">
+		  <h4>3</h4>
+		</div>
+		<div class="item">
+		  <h4>4</h4>
+		</div>
+		<div class="item">
+		  <h4>5</h4>
+		</div>
+		<div class="item">
+		  <h4>6</h4>
+		</div>
+	  </div>
+</section>
+
+
+	<!-- experience (Linha Temporal)  -->
+	<section class="page-section" id="experience" step="4">
 		<div class="container">
 			<div class="col-md-12">
 				<h1 class="size-50">Linha teporal</h1>
@@ -276,7 +309,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+</section>
 
 	<!-- Footer -->
 <footer class="page-footer font-small pt-4 bg-footer text-light">
@@ -353,5 +386,24 @@
 
 	<!--Importando plug-in-->
   <script src="JS/creative.min.js"></script>
+  <script>
+	$(document).ready(function() {
+	  var owl = $('.owl-carousel');
+	  owl.owlCarousel({
+		items: 3,
+		loop: true,
+		margin: 10,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		autoplayHoverPause: true
+	  });
+	  $('.play').on('click', function() {
+		owl.trigger('play.owl.autoplay', [1000])
+	  })
+	  $('.stop').on('click', function() {
+		owl.trigger('stop.owl.autoplay')
+	  })
+	})
+  </script>
 </body> 
 </html>
